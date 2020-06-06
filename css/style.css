@@ -8708,7 +8708,8 @@ h1, h2, h3, h4, h5,
       -webkit-text-fill-color: transparent; }
   .services .media-body h3 {
     font-size: 18px;
-    font-weight: 500; }
+    font-weight: 500; 
+    text-align: center;}
 
 .services-1 {
   margin-bottom: 40px;
@@ -8939,7 +8940,8 @@ textarea.form-control {
 
 .ftco-animate {
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  text-align: center; }
 
 .bg-primary {
   background: #0075f6 !important; }
@@ -9070,7 +9072,8 @@ textarea.form-control {
   margin-bottom: 5px;
   text-transform: uppercase;
   color: black;
-  letter-spacing: 3px; }
+  letter-spacing: 3px;
+ }
 
 .heading-section h2 {
   font-size: 40px;
@@ -9234,7 +9237,9 @@ textarea.form-control {
 .block-6 {
   margin-bottom: 40px; }
   .block-6 .media-body p {
-    font-size: 16px; }
+    font-size: 16px;
+    text-align: center;
+   }
 
 .block-27 ul {
   padding: 0;
