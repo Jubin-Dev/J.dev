@@ -1,10 +1,5 @@
- 
- 
- 
- 
- 
- 
- 
+  // Your web app's Firebase configuration
+  
  AOS.init({
  	duration: 800,
  	easing: 'slide'
@@ -251,6 +246,24 @@
 	};
 	contentWayPoint();
 
+
+	// Back to top button
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+		$('.back-to-top').fadeIn('slow');
+		} else {
+		$('.back-to-top').fadeOut('slow');
+		}
+	});
+
+	$('.back-to-top').click(function() {
+		$('html, body').animate({
+		scrollTop: 0
+		}, 1500, 'easeInOutExpo');
+		return false;
+	});
+
+
 	// magnific popup
 	$('.image-popup').magnificPopup({
     type: 'image',
@@ -282,9 +295,63 @@
     fixedContentPos: false
   });
 
-
-
-
-
 })(jQuery);
 
+
+
+
+
+//CONTACT FORM CONNECTED TO FIREBASE
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCquEs3pAGjoiQWGu0b-uWV_KDJvpaYF2I",
+    authDomain: "portfolio-contacts-forms.firebaseapp.com",
+    databaseURL: "https://portfolio-contacts-forms.firebaseio.com",
+    projectId: "portfolio-contacts-forms",
+    storageBucket: "portfolio-contacts-forms.appspot.com",
+    messagingSenderId: "187118993828",
+    appId: "1:187118993828:web:c91bfaf9ca4d4192bf4131",
+    measurementId: "G-Z994CZ6KTB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var firestore = firebase.firestore();
+
+  const submitBtn = document.querySelector('#sbmtd');
+
+  let fullName = document.querySelector('#name');
+  let fullemail = document.querySelector('#email');
+  let fullsubject = document.querySelector('#subject');
+  let fullMessage = document.querySelector('#msg');
+
+  const db = firestore.collection("contactData");
+
+  submitBtn.addEventListener('click', function(){
+	  let fullNameInput = fullName.value;
+	  let fullemailInput = fullemail.value;
+	  let fullsubjectInput = fullsubject.value;
+	  let fullmessageInput = fullMessage.value;
+
+	  db.doc().set({
+		  name : fullNameInput,
+		  email: fullemailInput,
+		  subject: fullsubjectInput,
+		  message: fullmessageInput
+	  }).then(function() {
+		  console.log('DataSaved');
+
+	  }).catch(function(error) {
+		  console.log(error);
+	  });
+	
+  });
+
+
+
+  
+
+ 
+ 
+ 
+ 
