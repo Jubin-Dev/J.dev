@@ -1693,7 +1693,7 @@ select.form-control[size], select.form-control[multiple] {
 textarea.form-control {
   height: auto; }
 
-.form-group {
+.form-group input[type="text"] {
   margin-bottom: 1rem; }
 
 .form-text {
@@ -4240,9 +4240,17 @@ input[type="button"].btn-block {
     color: #202326; }
 
 .alert-success {
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 10px;
   color: #155724;
   background-color: #d4edda;
-  border-color: #c3e6cb; }
+  border-color: #c3e6cb;
+  transition: all 0.9s ease;
+  display: none;
+ }
+
+
   .alert-success hr {
     border-top-color: #b1dfbb; }
   .alert-success .alert-link {
@@ -4292,6 +4300,16 @@ input[type="button"].btn-block {
     border-top-color: #b9bbbe; }
   .alert-dark .alert-link {
     color: #040505; }
+
+
+    #error_message{
+      margin-bottom: 10px;
+      background: #fe8b8e;
+      padding:0px;
+      text-align: center;
+      font-size: 14px;
+      transition: all 0.5s ease;
+    }
 
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -9276,7 +9294,7 @@ textarea.form-control {
 .contact-section .contact-form {
   width: 100%; }
   @media (max-width: 767.98px) {
-    .contact-section .contact-form .btn-primary {
+    .contact-section .contact-form .btn-primary[type="button"] {
       display: block;
       width: 100%; } }
 
@@ -9389,7 +9407,7 @@ textarea.form-control {
   padding: 10px; }
   .search-form .form-group {
     position: relative;
-    margin-bottom: 0; }
+    margin-bottom: 10; }
     .search-form .form-group input {
       padding-right: 50px;
       font-size: 14px; }

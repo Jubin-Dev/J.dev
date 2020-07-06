@@ -543,7 +543,11 @@
 
 			<div class="row no-gutters block-9">
 				<div class="col-md-6 order-md-last d-flex">
-					<form action="#" class="bg-light p-4 p-md-5 contact-form">
+					
+					
+					<form action="#" class="bg-light p-4 p-md-5 contact-form" onsubmit="return validate();">
+						<div id="error_message"></div>	
+						<div class="alert-success"><div class="icon-thumbs-o-up h4" ></div>Your details is submitted sucsessfully...!</div>
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Your Name" id="name">
 						</div>
@@ -699,6 +703,7 @@
 	<script src="js/aos.js"></script>
 	<script src="js/jquery.animateNumber.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
+	<script src="js/scripts.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
 	<script src="js/main.js"></script>
