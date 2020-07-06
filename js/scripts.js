@@ -1,36 +1,113 @@
-function validate(){
-  var name = document.getElementById("name").value;
-  var subject = document.getElementById("subject").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("msg").value;
-  var error_message = document.getElementById("error_message");
+// function validate(){
+//   var name = document.getElementById("name").value;
+//   var subject = document.getElementById("subject").value;
+//   var email = document.getElementById("email").value;
+//   var message = document.getElementById("msg").value;
+//   var error_message = document.getElementById("error_message");
   
-  error_message.style.padding = "10px";
+//   error_message.style.padding = "10px";
   
-  var text;
-  if(name.length < 5){
-    text = "Please Enter valid Name";
-    error_message.innerHTML = text;
-    return false;
-  }
-  if(subject.length < 10){
-    text = "Please Enter Correct Subject";
-    error_message.innerHTML = text;
-    return false;
-  }
+//   var text;
+//   if(name.length < 5){
+//     text = "Please Enter valid Name";
+//     error_message.innerHTML = text;
+//     return false;
+//   }
+//   if(subject.length < 10){
+//     text = "Please Enter Correct Subject";
+//     error_message.innerHTML = text;
+//     return false;
+//   }
   
-  if(email.indexOf("@") == -1 || email.length < 6){
-    text = "Please Enter valid Email";
-    error_message.innerHTML = text;
-    return false;
-  }
-  if(message.length <= 140){
-    text = "Please Enter More Than 140 Characters";
-    error_message.innerHTML = text;
-    return false;
-  }
-  function(){
+//   if(email.indexOf("@") == -1 || email.length < 6){
+//     text = "Please Enter valid Email";
+//     error_message.innerHTML = text;
+//     return false;
+//   }
+//   if(message.length <= 140){
+//     text = "Please Enter More Than 140 Characters";
+//     error_message.innerHTML = text;
+//     return false;
+//   }
+//   alert("Form Submitted Successfully!");
+//   return true;
+// }
+
+
+
+(function ($) {
     
-  };
-  return true;
-}
+  "use strict";
+  /*==================================================================
+  [ Validate after type ]*/
+  $('.validate-input .input100').each(function(){
+      $(this).on('blur', function(){
+          if(validate(this) == false){
+              showValidate(this);
+          }
+          else {
+              $(this).parent().addClass('true-validate');
+          }
+      })    
+  })
+
+
+  /*==================================================================
+  [ Validate ]*/
+  var input = $('.validate-input .input100');
+
+  $('.validate-form').on('submit',function(){
+      var check = true;
+
+      for(var i=0; i<input.length; i++) {
+          if(validate(input[i]) == false){
+              showValidate(input[i]);
+              check=false;
+          }
+      }
+
+      return check;
+  });
+
+
+  $('.validate-form .input100').each(function(){
+      $(this).focus(function(){
+         hideValidate(this);
+         $(this).parent().removeClass('true-validate');
+      });
+  });
+
+   function validate (input) {
+      if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+          if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+              return false;
+          }
+      }
+      else {
+          if($(input).val().trim() == ''){
+              return false;
+          }
+      }
+  }
+
+  function showValidate(input) {
+      var thisAlert = $(input).parent();
+
+      $(thisAlert).addClass('alert-validate');
+
+      $(thisAlert).append('<span class="btn-hide-validate">&#xf136;</span>')
+      $('.btn-hide-validate').each(function(){
+          $(this).on('click',function(){
+             hideValidate(this);
+          });
+      });
+  }
+
+  function hideValidate(input) {
+      var thisAlert = $(input).parent();
+      $(thisAlert).removeClass('alert-validate');
+      $(thisAlert).find('.btn-hide-validate').remove();
+  }
+  
+
+})(jQuery);
