@@ -295,9 +295,9 @@ AOS.init({
 		fixedContentPos: false
 	});
 
-//CONTACT FORM CONNECTED TO FIREBASE
-	
-var firebaseConfig = {
+	//CONTACT FORM CONNECTED TO FIREBASE
+
+	var firebaseConfig = {
 		apiKey: "AIzaSyCquEs3pAGjoiQWGu0b-uWV_KDJvpaYF2I",
 		authDomain: "portfolio-contacts-forms.firebaseapp.com",
 		databaseURL: "https://portfolio-contacts-forms.firebaseio.com",
@@ -310,49 +310,49 @@ var firebaseConfig = {
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
 	var firestore = firebase.firestore();
-	
+
 	const submitBtn = document.querySelector('#sbmtd');
-	
-	let fullName = document.querySelector('#name');
-	let fullemail = document.querySelector('#email');
-	let fullsubject = document.querySelector('#subject');
-	let fullMessage = document.querySelector('#msg');
-	
-	const db = firestore.collection("contactData");
-	
-	submitBtn.addEventListener('click', function(e) {
+
+	var error_message = document.getElementById("error_message");
+
+	var fullName = document.querySelector('#name');
+	var fullemail = document.querySelector('#email');
+	var fullsubject = document.querySelector('#subject');
+	var fullMessage = document.querySelector('#msg');
+
+	const db = firestore.collection("ContactsData");
+
+	submitBtn.addEventListener('click', submitForm)
+
+	function submitForm(e) {
 		e.preventDefault();
-	
-	
-	
-			let fullNameInput = fullName.value;
-			let fullemailInput = fullemail.value;
-			let fullsubjectInput = fullsubject.value;
-			let fullmessageInput = fullMessage.value;
-	
-	
-	
-			db.doc().set({
-				message: fullmessageInput,
-				email: fullemailInput,
-				subject: fullsubjectInput,
-				name: fullNameInput,
-	
-			})
-				//  show Alert success or not
-				.then(function () {
-					document.querySelector('.alert-success').style.display = 'block';
-					//  hide alert after 3 sec
-					setTimeout(function () {
-						document.querySelector('.alert-success').style.display = 'none';
-					}, 6000);
-	
-				}).catch(function (error) {
-					console.log(error);
-				});
-		}
-	);
-	
+
+		var fullNameInput = fullName.value;
+		var fullemailInput = fullemail.value;
+		var fullsubjectInput = fullsubject.value;
+		var fullmessageInput = fullMessage.value;
+
+
+		db.doc().set({
+			message: fullmessageInput,
+			email: fullemailInput,
+			subject: fullsubjectInput,
+			name: fullNameInput,
+
+		}).then (function (){
+			//  show Alert success or not
+			
+				document.querySelector('.alert-success').style.display = 'block';
+				//  hide alert after 3 sec
+				setTimeout(function () {
+					document.querySelector('.alert-success').style.display = 'none';
+				}, 6000);
+
+				document.querySelector('#form').reset();
+			}).catch(function (error) {
+				console.log(error);
+			});
+	}
 
 })(jQuery);
 

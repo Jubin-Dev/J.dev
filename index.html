@@ -545,24 +545,23 @@
 				<div class="col-md-6 order-md-last d-flex">
 					
 					
-					<form action="#" class="bg-light p-4 p-md-5 contact-form" id="form" onsubmit = "return validate();">
+					<form action="#contact-section" class="bg-light p-4 p-md-5 contact-form" id="form" onsubmit = "return validateForm();">
 						<div id="error_message"></div>	
 						<div class="alert-success"><div class="icon-thumbs-o-up h4" ></div>Your details is submitted sucsessfully...!</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name" id="name">
+							<input type="text" class="form-control" placeholder="Your Name" id="name" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email" id="email">
+							<input type="text" class="form-control" placeholder="Your Email" id="email" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject" id="subject">
+							<input type="text" class="form-control" placeholder="Subject" id="subject" required>
 						</div>
 						<div class="form-group">
 							<textarea name="Message" cols="30" rows="7" class="form-control" placeholder="Message"
-								id="msg"></textarea>
-						</div>
+								id="msg" required></textarea></div>
 						<div class="form-group">
-							<input type="submit" value="Send Message" id="sbmtd" class="btn btn-primary py-3 px-5">
+							<input type="button" value="Send Message" id="sbmtd" class="btn btn-primary py-3 px-5" >
 						</div>
 					</form>
 
