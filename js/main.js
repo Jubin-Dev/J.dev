@@ -310,6 +310,9 @@ AOS.init({
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
 	var firestore = firebase.firestore();
+	var storage = firebase.storage();   // using for get resume stored in firebase storage
+
+	var pathReference = storage.ref('Resume/JUBIN_RESUME.pdf')	//firebse Storage
 
 	const submitBtn = document.querySelector('#sbmtd');
 
@@ -319,6 +322,21 @@ AOS.init({
 	var fullemail = document.querySelector('#email');
 	var fullsubject = document.querySelector('#subject');
 	var fullMessage = document.querySelector('#msg');
+
+	var dowloadButton = document.getElementById('dowloadButton') // by 'get resume' id
+
+	if(dowloadButton){
+	addEventListener('click', function(){                  // event listner for click the events
+		pathReference.getDownloadURL().then(function(url){
+			// console.log("CLICK TO DOWNLOAD")
+			console.log(url)
+		// window.open(url,'_blank')  // is for to open event in new tab
+
+			})
+		})
+		
+			
+	}
 
 	const db = firestore.collection("ContactsData");
 

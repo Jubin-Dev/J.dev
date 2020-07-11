@@ -8620,6 +8620,11 @@ h1, h2, h3, h4, h5,
     background: #0075f6;
     border: 1px solid #0075f6 !important;
     color: #fff !important; }
+
+    .btn.btn-resume {
+      background: #f1f4f7;
+      border: 1px solid #0d045c !important;
+      color: rgb(221, 36, 36) !important; }
     .btn.btn-primary:hover {
       border: 1px solid #0075f6;
       background: #9ff669;
