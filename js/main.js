@@ -264,36 +264,44 @@ AOS.init({
 	});
 
 
-	// magnific popup
-	$('.image-popup').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		closeBtnInside: false,
-		fixedContentPos: true,
-		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			verticalFit: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300 // don't foget to change the duration also in CSS
-		}
-	});
+	// // magnific popup
+	// $('.image-popup').magnificPopup({
+	// 	type: 'image',
+	// 	closeOnContentClick: true,
+	// 	closeBtnInside: false,
+	// 	fixedContentPos: true,
+	// 	mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+	// 	gallery: {
+	// 		enabled: true,
+	// 		navigateByImgClick: true,
+	// 		preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+	// 	},
+	// 	image: {
+	// 		verticalFit: true
+	// 	},
+	// 	zoom: {
+	// 		enabled: true,
+	// 		duration: 300 // don't foget to change the duration also in CSS
+	// 	}
+	// });
 
-	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
+	// $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+	// 	disableOn: 700,
+	// 	type: 'iframe',
+	// 	mainClass: 'mfp-fade',
+	// 	removalDelay: 160,
+	// 	preloader: false,
 
-		fixedContentPos: false
-	});
+	// 	fixedContentPos: false
+	// });
+
+	// //Function To Display Popup
+
+	// function divShow() {
+	// 	window.open(
+
+	// 	)
+	// }
 
 	//CONTACT FORM CONNECTED TO FIREBASE
 
@@ -310,9 +318,9 @@ AOS.init({
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
 	var firestore = firebase.firestore();
-	var storage = firebase.storage();   // using for get resume stored in firebase storage
+	// var storage = firebase.storage();   // using for get resume stored in firebase storage
 
-	var pathReference = storage.ref('Resume/JUBIN_RESUME.pdf')	//firebse Storage
+	// var pathReference = storage.ref('Resume/JUBIN_RESUME.pdf')	//firebse Storage
 
 	const submitBtn = document.querySelector('#sbmtd');
 
@@ -323,20 +331,20 @@ AOS.init({
 	var fullsubject = document.querySelector('#subject');
 	var fullMessage = document.querySelector('#msg');
 
-	var dowloadButton = document.getElementById('dowloadButton') // by 'get resume' id
+	// var dowloadButton = document.getElementById('dowloadButton') // by 'get resume' id
 
-	if(dowloadButton){
-	addEventListener('click', function(){                  // event listner for click the events
-		pathReference.getDownloadURL().then(function(url){
-			// console.log("CLICK TO DOWNLOAD")
-			console.log(url)
-		// window.open(url,'_blank')  // is for to open event in new tab
+	// if (dowloadButton) {
+	// 	addEventListener('click', function () {                  // event listner for click the events
+	// 		pathReference.getDownloadURL().then(function (url) {
+	// console.log("CLICK TO DOWNLOAD")
+	// console.log(url)
+	// window.open(url,'_blank')  // is for to open event in new tab
 
-			})
-		})
-		
-			
-	}
+
+	// 	})
+
+
+
 
 	const db = firestore.collection("ContactsData");
 
@@ -357,20 +365,78 @@ AOS.init({
 			subject: fullsubjectInput,
 			name: fullNameInput,
 
-		}).then (function (){
+		}).then(function () {
 			//  show Alert success or not
-			
-				document.querySelector('.alert-success').style.display = 'block';
-				//  hide alert after 3 sec
-				setTimeout(function () {
-					document.querySelector('.alert-success').style.display = 'none';
-				}, 6000);
 
-				document.querySelector('#form').reset();
-			}).catch(function (error) {
-				console.log(error);
-			});
+			document.querySelector('.alert-success').style.display = 'block';
+			//  hide alert after 3 sec
+			setTimeout(function () {
+				document.querySelector('.alert-success').style.display = 'none';
+			}, 6000);
+
+			document.querySelector('#form').reset();
+		}).catch(function (error) {
+			console.log(error);
+		});
 	}
+
+
+	// const toggleModal = () => {
+	// 	document.querySelector("._modal").classList.toggle(".bg-active");
+	// 	document.querySelector("._modal-bg").classList.toggle(".bg-active");
+	//  document.querySelector("._modal-close").classList.toggle("bg-diactive");
+	// };
+	// document.querySelector("#show-modal").addEventListener("click", toggleModal);
+
+	// document.querySelector("._modal-bg").addEventListener("click", toggleModal);
+
+	// document.querySelector("#hiremeform").addEventListener("submit", (e) => {
+	// 	e.preventDefault();
+	// 	toggleModal();
+	// });
+
+	// document.querySelector("._modal-close").addEventListener("click", toggleModal);
+	// document.querySelector("._modal-bg").addEventListener("click", toggleModal);
+
+	// var modalBtn = document.querySelector('#show-modal');
+	// var modalBg = document.querySelector('._modal-bg');
+	// // var modalClose = document.querySelector('._modal-close');
+
+
+
+
+	// 	if(modalBtn){ addEventListener('click', function (){
+	// 		modalBg.classList.add('bg-active');
+
+	// 		})
+	// 	}
+
+	// if (modalClose){ addEventListener('click', function (){
+	// 	modalBg.classList.remove('bg-active');
+	// 	console.log("full working")
+	// });
+	// };
+
+	// const open = document.querySelector('#show-modal');
+	// const modal_bg =
+	// 	document.querySelector('.modal--bg');
+	// const close =
+	// 	document.querySelector('.modals-close');
+
+	// if (open) {
+	// 	addEventListener('click', function () {
+	// 		modal_bg.classList.add('shows');
+	// 		console.log("qqq")
+	// 	})
+	// }
+	// if (close) {
+	// 	addEventListener('click', function () {
+	// 		modal_bg.classList.remove('shows');
+	// 	})
+	// }
+
+	
+
 
 })(jQuery);
 
