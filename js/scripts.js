@@ -137,7 +137,7 @@ function validateForm() {
     /* Image Slider - Swiper */
     var imageSlider = new Swiper('.image-slider', {
         autoplay: {
-            delay: 2000,
+            delay: 1000,
             disableOnInteraction: false
 		},
         loop: false,
@@ -145,8 +145,8 @@ function validateForm() {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-        spaceBetween: 30,
-        slidesPerView: 5,
+        spaceBetween: 10,
+        slidesPerView: 1,
 		breakpoints: {
             // when window is <= 380px
             380: {
@@ -155,23 +155,23 @@ function validateForm() {
             },
             // when window is <= 516px
             516: {
-                slidesPerView: 2,
+                slidesPerView: 4,
                 spaceBetween: 10
             },
             // when window is <= 768px
             768: {
-                slidesPerView: 3,
-                spaceBetween: 20
+                slidesPerView: 2,
+                spaceBetween: 10
             },
             // when window is <= 992px
             992: {
                 slidesPerView: 4,
-                spaceBetween: 30
+                spaceBetween: 20
             },
             // when window is <= 1200px
             1200: {
-                slidesPerView: 5,
-                spaceBetween: 30
+                slidesPerView: 2,
+                spaceBetween: 20
             },
         }
     });
@@ -402,7 +402,7 @@ function validateForm() {
     /* Back To Top Button */
     // create the back to top button
     $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
-    var amountScrolled = 700;
+    var amountScrolled = 600;
     $(window).scroll(function() {
         if ($(window).scrollTop() > amountScrolled) {
             $('a.back-to-top').fadeIn('500');
