@@ -137,7 +137,7 @@ function validateForm() {
     /* Image Slider - Swiper */
     var imageSlider = new Swiper('.image-slider', {
         autoplay: {
-            delay: 1000,
+            delay: 2000,
             disableOnInteraction: false
 		},
         loop: false,
@@ -150,12 +150,12 @@ function validateForm() {
 		breakpoints: {
             // when window is <= 380px
             380: {
-                slidesPerView: 1,
+                slidesPerView: 3,
                 spaceBetween: 10
             },
             // when window is <= 516px
             516: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 10
             },
             // when window is <= 768px

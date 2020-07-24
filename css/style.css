@@ -5934,9 +5934,13 @@ button.bg-dark:focus {
     -ms-flex-pack: end !important;
     justify-content: flex-end !important; }
   .justify-content-md-center {
-    -webkit-box-pack: center !important;
+    /* -webkit-box-pack: center !important;
     -ms-flex-pack: center !important;
-    justify-content: center !important; }
+    justify-content: center !important; */
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+   }
   .justify-content-md-between {
     -webkit-box-pack: justify !important;
     -ms-flex-pack: justify !important;
@@ -8428,7 +8432,7 @@ h1, h2, h3, h4, h5,
           width: 4.75rem;
           height: 4.75rem;
           border-radius: 50%;
-          background: #0075F6;
+          background: #f01d4abb;
           animation: pulse-border 1500ms ease-out infinite;
           -webkit-transform: translateX(-50%) translateY(-50%);
           -ms-transform: translateX(-50%) translateY(-50%);
@@ -8446,7 +8450,7 @@ h1, h2, h3, h4, h5,
           width: 4.375rem;
           height: 4.375rem;
           border-radius: 50%;
-          background: #0075F6;
+          background: #e959a69d;
           transition: all 200ms;
           -webkit-transform: translateX(-50%) translateY(-50%);
           -ms-transform: translateX(-50%) translateY(-50%);
@@ -10023,30 +10027,37 @@ textarea.form-control {
 
 	/* Statistics */
 	.counter_State {
-  padding-top: 5%;
-  padding-left: 12%;
-  justify-self: auto;
+    padding-top: 6.5rem;
+    padding-bottom: 5.375rem;
+    background-color: #0075f6;
+    text-align: center;
   
  
 	}
 
 	.counter_State #counter .cell {
 
-  display: table-cell; 
-  font-size: 20px;
-  color: aliceblue;
-  text-align: center;
-  width:200px;
-  height:200px;
- 
+  display: inline-block;
+	width: 6.25rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	margin-bottom: 2rem;
   
-  
-    
 	}
 	
 	.counter_State #counter .counter-value {
-		font: 900 4.25rem/4.5rem "Montserrat", sans-serif;	
-	}
+    color: #f1f1f8;
+    font: 900 4.25rem/4.5rem "Montserrat", sans-serif;	
+    vertical-align: middle;
+  }
+
+  .counter_State #counter .counter-info {
+    margin-bottom: 0;
+    color: #f1f1f8;
+    font: 400 0.875rem/1.25rem "Open Sans", sans-serif;
+    vertical-align: middle;
+  }
+  
   /* end of statistics */
 
 
