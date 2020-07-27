@@ -435,7 +435,60 @@ AOS.init({
 	// 	})
 	// }
 
+	/* HIRE ME SECTION ANIMATE BUTTON */
+	var label = document.querySelector(".label");
+	var spanLabel = document.querySelector(".span--label");
+	var email = document.querySelector(".email");
+	var btn = document.querySelector(".send");
+	var form = document.querySelector("form");
+	var labelWrong = document.querySelector(".labelWrong");
+	var spanWrong = document.querySelector(".spanWrong");
+	var paperplane = document.querySelector(".icon-paper-plane");
+	var check = document.querySelector(".icon-tick");
+	var Uin = document.querySelector(".Uin");
 	
+	window.addEventListener("load", function() {
+	  spanLabel.classList.add("span--labelAnimation");
+	});
+	
+	label.addEventListener("click", () => {
+	  label.classList.add("labelWidth");
+	});
+	
+	form.addEventListener("submit", function(e) {
+	  e.preventDefault();
+	  var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+	
+	  if (regexEmail.test(email.value)) {
+		paperplane.classList.add("icon-paper-plane--animation");
+		paperplane.addEventListener("animationend", sendMail());
+	  } else {
+		labelWrong.style.display = "block";
+		spanWrong.classList.add("spanWrong--animation");
+	  }
+	});
+	
+	labelWrong.addEventListener("click", function() {
+	  email.value = "";
+	  labelWrong.style.display = "";
+	});
+	
+	var sendMail = function() {
+	  check.style.opacity = "1";
+	  btn.classList.add("sendRight");
+	  email.classList.add("email--animation");
+	  email.addEventListener("animationend", function() {
+		Uin.style.display = "block";
+		window.setTimeout(function (){
+			document.querySelector('.Uin').style.display = 'none';
+							  }, 6000)
+							
+	  });
+	};
+	
+
+
+	/* HIRE ME SECTION ANIMATE BUTTON */
 
 
 })(jQuery);
