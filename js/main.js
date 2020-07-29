@@ -435,68 +435,139 @@ AOS.init({
 	// 	})
 	// }
 
-	/* HIRE ME SECTION ANIMATE BUTTON */
-	var label = document.querySelector(".label");
-	var spanLabel = document.querySelector(".span--label");
-	var email = document.querySelector(".email");
-	var btn = document.querySelector(".send");
-	var form = document.querySelector("form");
-	var labelWrong = document.querySelector(".labelWrong");
-	var spanWrong = document.querySelector(".spanWrong");
-	var paperplane = document.querySelector(".icon-paper-plane");
-	var check = document.querySelector(".icon-tick");
-	var Uin = document.querySelector(".Uin");
+	// /* HIRE ME SECTION ANIMATE BUTTON */
+	// var label = document.querySelector(".label");
+	// var spanLabel = document.querySelector(".span--label");
+	// var email = document.querySelector(".email");
+	// var btn = document.querySelector(".send");
+	// var form = document.querySelector("form");
+	// var labelWrong = document.querySelector(".labelWrong");
+	// var spanWrong = document.querySelector(".spanWrong");
+	// var paperplane = document.querySelector(".icon-paper-plane");
+	// var check = document.querySelector(".icon-tick");
+	// var Uin = document.querySelector(".Uin");
 	
-	window.addEventListener("load", function() {
-	  spanLabel.classList.add("span--labelAnimation");
-	});
+	// window.addEventListener("load", function() {
+	//   spanLabel.classList.add("span--labelAnimation");
+	// });
 	
-	label.addEventListener("click", () => {
-	  label.classList.add("labelWidth");
-	});
+	// label.addEventListener("click", () => {
+	//   label.classList.add("labelWidth");
+	// });
 	
-	form.addEventListener("submit", function(e) {
-	  e.preventDefault();
-	  var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+	// form.addEventListener("submit", function(e) {
+	//   e.preventDefault();
+	//   var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 	
-	  if (regexEmail.test(email.value)) {
-		paperplane.classList.add("icon-paper-plane--animation");
-		paperplane.addEventListener("animationend", sendMail());
-	  } else {
-		labelWrong.style.display = "block";
-		spanWrong.classList.add("spanWrong--animation");
-	  }
-	});
+	//   if (regexEmail.test(email.value)) {
+	// 	paperplane.classList.add("icon-paper-plane--animation");
+	// 	paperplane.addEventListener("animationend", sendMail());
+	//   } else {
+	// 	labelWrong.style.display = "block";
+	// 	spanWrong.classList.add("spanWrong--animation");
+	//   }
+	// });
 	
-	labelWrong.addEventListener("click", function() {
-	  email.value = "";
-	  labelWrong.style.display = "";
-	});
+	// labelWrong.addEventListener("click", function() {
+	//   email.value = "";
+	//   labelWrong.style.display = "";
+	// });
 	
-	var sendMail = function() {
-	  check.style.opacity = "1";
-	  btn.classList.add("sendRight");
-	  email.classList.add("email--animation");
-	  email.addEventListener("animationend", function() {
-		Uin.style.display = "block";
-		window.setTimeout(function (){
-			document.querySelector('.Uin').style.display = 'none';
-							  }, 6000)
+	// var sendMail = function() {
+	//   check.style.opacity = "1";
+	//   btn.classList.add("sendRight");
+	//   email.classList.add("email--animation");
+	//   email.addEventListener("animationend", function() {
+	// 	Uin.style.display = "block";
+	// 	window.setTimeout(function (){
+	// 		document.querySelector('.Uin').style.display = 'none';
+	// 						  }, 6000)
 							
-	  });
-	};
+	//   });
+	// };
 	
 
 
-	/* HIRE ME SECTION ANIMATE BUTTON */
+	// /* HIRE ME SECTION ANIMATE BUTTON */
 
+
+
+
+	// $(document).ready(function() {
+	// 	$('.btn-outline-warning').click(function(e) {
+	// 	  $('.popup-wrap').fadeIn(500);
+	// 	  $('.popup-box').removeClass('transform-out').addClass('transform-in');
+	  
+	// 	  e.preventDefault();
+	// 	});
+	  
+	// 	$('.popup-close').click(function(e) {
+	// 	  $('.popup-wrap').fadeOut(500);
+	// 	  $('.popup-box').removeClass('transform-in').addClass('transform-out');
+	  
+	// 	  e.preventDefault();
+	// 	});
+	//   });
+
+
+	  //Hire me ContACT Form//
+	  
+	 
+	  (function ($) {
+		"use strict";
+	
+	
+		/*==================================================================
+		[ Validate ]*/
+		var input = $('.validate-input .input100');
+	
+		$('.validate-form').on('submit',function(){
+			var check = true;
+	
+			for(var i=0; i<input.length; i++) {
+				if(validate(input[i]) == false){
+					showValidate(input[i]);
+					check=false;
+				}
+			}
+	
+			return check;
+		});
+	
+	
+		$('.validate-form .input100').each(function(){
+			$(this).focus(function(){
+			   hideValidate(this);
+			});
+		});
+	
+		function validate (input) {
+			if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+				if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+					return false;
+				}
+			}
+			else {
+				if($(input).val().trim() == ''){
+					return false;
+				}
+			}
+		}
+	
+		function showValidate(input) {
+			var thisAlert = $(input).parent();
+	
+			$(thisAlert).addClass('alert-validate');
+		}
+	
+		function hideValidate(input) {
+			var thisAlert = $(input).parent();
+	
+			$(thisAlert).removeClass('alert-validate');
+		}
+	})
+ //Hire me ContACT Form//
 
 })(jQuery);
-
-
-
-
-
-
 
 
