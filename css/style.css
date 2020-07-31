@@ -1695,7 +1695,11 @@ textarea.form-control {
   height: auto; }
 
 .form-group input[type="text"] {
-  margin-bottom: 1rem; }
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 17px; }
 
 .form-text {
   display: block;
@@ -10883,26 +10887,39 @@ iframe {
 
 .container1 {
   width: 1000px;
-  position: relative;
+  position: re;
   display: flex;
   justify-content: space-between;
 }
 .container1 .card {
   position: relative;   
 }
-.icon {
+/* .icon {
   display: block;
   margin-left: auto;
   margin-right: auto;
+} */
+
+.icon1 {
+  display: inline-block;
+  width: 60%;
+  height: 60%;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container1 .card .face {
-  width: 300px;
+  width: 280px;
   height: 200px;
   transition: 0.5s;
 }
 .container1 .card .face.face1 {
   position: relative;
-  background: #333;
+  background: #0075F6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10910,7 +10927,7 @@ iframe {
   transform: translateY(100px);
 }
 .container1 .card:hover .face.face1 {
-  background: #94bbe9;
+  background: #3d84d4;
   transform: translateY(0);
 }
 .container1 .card .face.face1 .content {
@@ -10926,13 +10943,13 @@ iframe {
 .container1 .card .face.face1 .content h3 {
   margin: 10px 0 0;
   padding: 0;
-  color: #fff;
+  color: #f8f9fa;
   text-align: center;
   font-size: 1.5em;
 }
 .container1 .card .face.face2 {
   position: relative;
-  background: #fff;
+  background: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10954,14 +10971,46 @@ iframe {
 
   text-decoration: none;
   font-weight: 900;
-  color: #333;
+  color: rgb(255, 249, 249);
   padding: 5px;
-  border: 1px solid #333; 
+  border: 0.5px solid rgb(255, 252, 252); 
 }
 .container1 .card .face.face2 .content a:hover {
-  background: #333;
-  color: #fff;
+  background: #f8f9fa;
+  color: #f8f9fa;
 }
 
+/***********************/
+/*     16. Contact     */
+/***********************/
+.form {
+	padding-top: 6.25rem;
+	padding-bottom: 5.625rem;
+	background: url('../images/contact-background.jpg') center bottom no-repeat;
+	background-size: cover; 
+}
+
+.form h2 {
+	margin-bottom: 1.125rem;
+	text-align: center;
+}
+
+.form .list-unstyled {
+	margin-bottom: 3.75rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	text-align: center;
+}
+
+.form .list-unstyled .fas,
+.form .list-unstyled .fab {
+	margin-right: 0.5rem;
+	font-size: 0.875rem;
+	color: #00c9db;
+}
+
+.form .list-unstyled .fa-phone {
+	vertical-align: 3%;
+}
 
 
