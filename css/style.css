@@ -11014,3 +11014,93 @@ iframe {
 }
 
 
+/* // ---------- C O N T A C T - C A R D ---------- */
+
+.contact-basic {
+	position: relative;
+  width: 20em;
+	/* background-color: #ffffff; */
+  /* text-align: left; */
+  /* text-decoration-style: var(--blue); */
+}
+
+.contact-card {
+  /* position: relative; */
+  width: 20em;
+	margin: 2.5rem auto;
+	padding: 3rem 1rem;
+	border-radius: 0.25rem;
+  /* width: 20em;  */
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 1em;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.125);
+  overflow: hidden;
+  transition: 0.125s ease-in-out;
+  -webkit-transition: 0.125s ease-in-out;
+  -moz-transition: 0.125s ease-in-out;
+}
+.contact-card:hover {
+  transform: translateY(-0.5em);
+}
+.contact-card__header-image {
+  width: 100%;
+  height: 7em;
+  padding-top: 2em;
+  background-image: url("https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
+  background-size: cover;
+  background-color: #fafafa;
+}
+.contact-card__avatar {
+  width: 7em;
+  height: 7em;
+  margin: auto;
+  background-image: url("https://scontent.fbho4-1.fna.fbcdn.net/v/t1.0-9/55460041_2469999209700955_9202895436673712128_n.jpg?_nc_cat=109&_nc_sid=a4a2d7&_nc_ohc=5mSNnleSGuAAX-UgHUw&_nc_ht=scontent.fbho4-1.fna&oh=03e1f688ead5dd3a2f12498070d4c153&oe=5F50B020");
+  background-size: cover;
+  background-color: #eeeeee;
+  border-radius: 100%;
+}
+.contact-card__name {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  font-size: 1.125rem;
+  
+}
+.contact-card__link {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+.contact-card__link a {
+  color: #424242;
+  text-decoration: none;
+}
+.contact-card__link:hover {
+  background-color: #fafafa;
+}
+.contact-card__footer {
+  margin-top: 0.5em;
+  padding: 1em 0;
+  background-color: #fafafa;
+}
+.contact-card__footer__link {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 1.125rem;
+  transition: 0.125s ease-in-out;
+  -webkit-transition: 0.125s ease-in-out;
+  -moz-transition: 0.125s ease-in-out;
+}
+.contact-card__footer__link a {
+  color: #424242;
+}
+.contact-card__footer__link--dribbble {
+  margin-right: 0;
+}
+.contact-card__footer__link:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+}
