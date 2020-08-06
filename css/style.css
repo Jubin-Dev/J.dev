@@ -11019,6 +11019,7 @@ iframe {
 .contact-basic {
 	position: relative;
   width: 20em;
+  margin: 2.5rem auto;
 	/* background-color: #ffffff; */
   /* text-align: left; */
   /* text-decoration-style: var(--blue); */
