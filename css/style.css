@@ -10927,18 +10927,19 @@ iframe {
   transform: translateY(100px);
 }
 .container1 .card:hover .face.face1 {
-  background: #3d84d4;
+  background: #66d14b;
   transform: translateY(0);
 }
 .container1 .card .face.face1 .content {
-  opacity: 0.2;
+  opacity: 1;
   transition: 0.5s;
 }
 .container1 .card:hover .face.face1 .content {
   opacity: 1;
 }
 .container1 .card .face.face1 .content img {
-  max-width: 100px;
+  width: 220px;
+ 
 }
 .container1 .card .face.face1 .content h3 {
   margin: 10px 0 0;
