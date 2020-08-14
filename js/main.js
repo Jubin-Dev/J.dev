@@ -305,31 +305,31 @@ AOS.init({
 
 	//CONTACT FORM CONNECTED TO FIREBASE
 
-	var firebaseConfig = {
-		apiKey: "AIzaSyCquEs3pAGjoiQWGu0b-uWV_KDJvpaYF2I",
-		authDomain: "portfolio-contacts-forms.firebaseapp.com",
-		databaseURL: "https://portfolio-contacts-forms.firebaseio.com",
-		projectId: "portfolio-contacts-forms",
-		storageBucket: "portfolio-contacts-forms.appspot.com",
-		messagingSenderId: "187118993828",
-		appId: "1:187118993828:web:c91bfaf9ca4d4192bf4131",
-		measurementId: "G-Z994CZ6KTB"
-	};
+	// var firebaseConfig = {
+	// 	apiKey: "AIzaSyCquEs3pAGjoiQWGu0b-uWV_KDJvpaYF2I",
+	// 	authDomain: "portfolio-contacts-forms.firebaseapp.com",
+	// 	databaseURL: "https://portfolio-contacts-forms.firebaseio.com",
+	// 	projectId: "portfolio-contacts-forms",
+	// 	storageBucket: "portfolio-contacts-forms.appspot.com",
+	// 	messagingSenderId: "187118993828",
+	// 	appId: "1:187118993828:web:c91bfaf9ca4d4192bf4131",
+	// 	measurementId: "G-Z994CZ6KTB"
+	// };
 	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	var firestore = firebase.firestore();
+	// firebase.initializeApp(firebaseConfig);
+	// var firestore = firebase.firestore();
 	// var storage = firebase.storage();   // using for get resume stored in firebase storage
 
 	// var pathReference = storage.ref('Resume/JUBIN_RESUME.pdf')	//firebse Storage
 
-	const submitBtn = document.querySelector('#sbmtd');
+	// const submitBtn = document.querySelector('#sbmtd');
 
-	var error_message = document.getElementById("error_message");
+	// var error_message = document.getElementById("error_message");
 
-	var fullName = document.querySelector('#name');
-	var fullemail = document.querySelector('#email');
-	var fullsubject = document.querySelector('#subject');
-	var fullMessage = document.querySelector('#msg');
+	// var fullName = document.querySelector('#name');
+	// var fullemail = document.querySelector('#email');
+	// var fullsubject = document.querySelector('#subject');
+	// var fullMessage = document.querySelector('#msg');
 
 	// var dowloadButton = document.getElementById('dowloadButton') // by 'get resume' id
 
@@ -346,39 +346,39 @@ AOS.init({
 
 
 
-	const db = firestore.collection("ContactsData");
+	// const db = firestore.collection("ContactsData");
 
-	submitBtn.addEventListener('click', submitForm)
+	// submitBtn.addEventListener('click', submitForm)
 
-	function submitForm(e) {
-		e.preventDefault();
+	// function submitForm(e) {
+	// 	e.preventDefault();
 
-		var fullNameInput = fullName.value;
-		var fullemailInput = fullemail.value;
-		var fullsubjectInput = fullsubject.value;
-		var fullmessageInput = fullMessage.value;
+	// 	var fullNameInput = fullName.value;
+	// 	var fullemailInput = fullemail.value;
+	// 	var fullsubjectInput = fullsubject.value;
+	// 	var fullmessageInput = fullMessage.value;
 
 
-		db.doc().set({
-			message: fullmessageInput,
-			email: fullemailInput,
-			subject: fullsubjectInput,
-			name: fullNameInput,
+	// 	db.doc().set({
+	// 		message: fullmessageInput,
+	// 		email: fullemailInput,
+	// 		subject: fullsubjectInput,
+	// 		name: fullNameInput,
 
-		}).then(function () {
+	// 	}).then(function () {
 			//  show Alert success or not
 
-			document.querySelector('.alert-success').style.display = 'block';
-			//  hide alert after 3 sec
-			setTimeout(function () {
-				document.querySelector('.alert-success').style.display = 'none';
-			}, 6000);
+	// 		document.querySelector('.alert-success').style.display = 'block';
+	// 		//  hide alert after 3 sec
+	// 		setTimeout(function () {
+	// 			document.querySelector('.alert-success').style.display = 'none';
+	// 		}, 6000);
 
-			document.querySelector('#form').reset();
-		}).catch(function (error) {
-			console.log(error);
-		});
-	}
+	// 		document.querySelector('#form').reset();
+	// 	}).catch(function (error) {
+	// 		console.log(error);
+	// 	});
+	// }
 
 
 	// const toggleModal = () => {
@@ -513,79 +513,79 @@ AOS.init({
 	  //Hire me ContACT Form//
 	  
 	 
-	  (function ($) {
-		"use strict";
+	//   (function ($) {
+	// 	"use strict";
 	
 	
-		/*==================================================================
-		[ Validate ]*/
-		 /* Move Form Fields Label When User Types */
-    // for input and textarea fields
-    $("input, textarea").keyup(function(){
-		if ($(this).val() != '') {
-			$(this).addClass('notEmpty');
-		} else {
-			$(this).removeClass('notEmpty');
-		}
-    });
+	// 	/*==================================================================
+	// 	[ Validate ]*/
+	// 	 /* Move Form Fields Label When User Types */
+    // // for input and textarea fields
+    // $("input, textarea").keyup(function(){
+	// 	if ($(this).val() != '') {
+	// 		$(this).addClass('notEmpty');
+	// 	} else {
+	// 		$(this).removeClass('notEmpty');
+	// 	}
+    // });
 
 
-    /* Contact Form */
-    $("#contactForm").validator().on("submit", function(event) {
-    	if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            cformError();
-            csubmitMSG(false, "Please fill all fields!");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            csubmitForm();
-        }
-    });
+    // /* Contact Form */
+    // $("#contactForm").validator().on("submit", function(event) {
+    // 	if (event.isDefaultPrevented()) {
+    //         // handle the invalid form...
+    //         cformError();
+    //         csubmitMSG(false, "Please fill all fields!");
+    //     } else {
+    //         // everything looks good!
+    //         event.preventDefault();
+    //         csubmitForm();
+    //     }
+    // });
 
-    function csubmitForm() {
-        // initiate variables with form content
-		var name = $("#cname").val();
-		var email = $("#cemail").val();
-        var message = $("#cmessage").val();
-        var terms = $("#cterms").val();
-        $.ajax({
-            type: "POST",
-            url: "php/contactform-process.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
-            success: function(text) {
-                if (text == "success") {
-                    cformSuccess();
-                } else {
-                    cformError();
-                    csubmitMSG(false, text);
-                }
-            }
-        });
-	}
+    // function csubmitForm() {
+    //     // initiate variables with form content
+	// 	var name = $("#cname").val();
+	// 	var email = $("#cemail").val();
+    //     var message = $("#cmessage").val();
+    //     var terms = $("#cterms").val();
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "php/contactform-process.php",
+    //         data: "name=" + name + "&email=" + email + "&message=" + message + "&terms=" + terms, 
+    //         success: function(text) {
+    //             if (text == "success") {
+    //                 cformSuccess();
+    //             } else {
+    //                 cformError();
+    //                 csubmitMSG(false, text);
+    //             }
+    //         }
+    //     });
+	// }
 
-    function cformSuccess() {
-        $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
-        $("input").removeClass('notEmpty'); // resets the field label after submission
-        $("textarea").removeClass('notEmpty'); // resets the field label after submission
-    }
+    // function cformSuccess() {
+    //     $("#contactForm")[0].reset();
+    //     csubmitMSG(true, "Message Submitted!");
+    //     $("input").removeClass('notEmpty'); // resets the field label after submission
+    //     $("textarea").removeClass('notEmpty'); // resets the field label after submission
+    // }
 
-    function cformError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass();
-        });
-	}
+    // function cformError() {
+    //     $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //         $(this).removeClass();
+    //     });
+	// }
 
-    function csubmitMSG(valid, msg) {
-        if (valid) {
-            var msgClasses = "h3 text-center tada animated";
-        } else {
-            var msgClasses = "h3 text-center";
-        }
-        $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
-	  })
+    // function csubmitMSG(valid, msg) {
+    //     if (valid) {
+    //         var msgClasses = "h3 text-center tada animated";
+    //     } else {
+    //         var msgClasses = "h3 text-center";
+    //     }
+    //     $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+    // }
+	//   })
  //Hire me ContACT Form//
 
 

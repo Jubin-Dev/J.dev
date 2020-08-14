@@ -439,6 +439,7 @@ pre {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
+  flex-wrap: wrap;
   margin-left: auto; }
   
   @media (min-width: 576px) {
@@ -10887,7 +10888,7 @@ iframe {
 
 .container1 {
   width: 1000px;
-  position: re;
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
