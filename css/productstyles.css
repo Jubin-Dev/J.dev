@@ -1,16 +1,13 @@
-:root{
-    --primary: #2175f5;
-}
 
 
 
 .productcontainer{
-    min-height: 100vh;
+    min-height: 10vh;
     align-content: stretch;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 50px;
     overflow: hidden;
 }
 
@@ -18,12 +15,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 860px;
+    width: 1200px;
 }
 
 .shoeBackground{
     position: relative;
-    width: 50%;
+    width: 60%;
     height: 475px;
     box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
     0 -15px 35px rgba(0, 0, 0, 0.1),
@@ -452,7 +449,7 @@
     }
 
     .info{
-        padding: 20px;
+        padding:20px ;
     }
 }
 
